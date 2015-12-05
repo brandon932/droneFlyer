@@ -10,10 +10,12 @@ app.config(function($routeProvider, $authProvider, $locationProvider) {
 
       $routeProvider
     .when('/', {
-      templateUrl: 'partials/welcome.html'
+      templateUrl: 'partials/welcome.html',
+      controller: 'mainCtrl'
     })
     .when('/home', {
-      templateUrl: 'partials/home.html'
+      templateUrl: 'partials/home.html',
+      controller: 'mainCtrl'
     })
     .when('/login', {
       templateUrl: 'partials/login.html',

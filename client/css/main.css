@@ -1,0 +1,12 @@
+
+body{
+  background: black;
+}
+
+.droneImg{
+  max-height: 200px;
+}
+.droneBox{
+  border: 5px;
+  padding: 10px;
+}
