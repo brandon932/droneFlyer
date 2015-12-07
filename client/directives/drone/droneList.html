@@ -6,7 +6,14 @@
     <div class="droneBox">
       <h3>{{drone.name}}</h3>
       <hr>
-      <button ng-if="isAuthenticated()" class='btn btn-success pull-right' type="button" name="button">Fly Me</button>
+      <div class="pull-left">
+        <p>
+          {{drone.name}} {{drone.Description}}
+        </p>
+      </div>
+      <div class="">
+        <button ng-click="flyDrone(drone.ip)"  class='btn btn-success pull-right' type="button" name="button">Fly Me</button>
+      </div>
     </div>
   </div>
 </div>

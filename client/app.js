@@ -25,6 +25,10 @@ app.config(function($routeProvider, $authProvider, $locationProvider) {
       templateUrl: 'partials/signup.html',
       controller: 'signupCtrl'
     })
+    .when('/webFlight', {
+      templateUrl: 'partials/webFlight.html',
+      controller: 'mainCtrl'
+    })
     .otherwise('/');
 
 });
