@@ -2,13 +2,14 @@ var app = angular.module('MyApp', ['ngRoute', 'satellizer']);
 
 app.config(function($routeProvider, $authProvider, $locationProvider) {
 
+
     $authProvider.github({
       url:'/auth/github',
       clientId: '0c345464624272812a83',
       redirectUri: window.location.origin
     });
 
-      $routeProvider
+    $routeProvider
     .when('/', {
       templateUrl: 'partials/welcome.html',
       controller: 'mainCtrl'
