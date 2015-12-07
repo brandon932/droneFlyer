@@ -14,10 +14,22 @@ var User = new Schema({
   password: {
     type: String,
     select: false
-},
+  },
   githubProfileID: {
     type: String
-  }
+  },
+  paid:{
+    type:Boolean,
+    default: false
+  },
+  admin:{
+    type:Boolean,
+    default: false
+  },
+  drones:[{
+    type: Schema.Types.ObjectId,
+    ref: 'drones'
+   }]
 });
 
 

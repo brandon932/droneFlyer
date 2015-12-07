@@ -1,5 +1,5 @@
-<div class="" ng-repeat="drone in drones">
-  <div class="container">
+<div class="container" ng-repeat="drone in drones">
+  <div ng-if="!drone.rented" >
     <div class="droneBox pull-left">
       <img class='droneImg' src="{{drone.image}}" alt="not found" />
     </div>
@@ -8,11 +8,11 @@
       <hr>
       <div class="pull-left">
         <p>
-          {{drone.name}} {{drone.Description}}
+          {{drone.name}} {{drone.description}}
         </p>
       </div>
       <div class="">
-        <button ng-click="flyDrone(drone.ip)"  class='btn btn-success pull-right' type="button" name="button">Fly Me</button>
+        <button ng-click="flyDrone(drone)"  class='btn btn-success pull-right' type="button" name="button">Fly Me</button>
       </div>
     </div>
   </div>
