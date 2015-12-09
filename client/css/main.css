@@ -1,6 +1,15 @@
 
 body{
   background: black;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+     background-attachment:fixed;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: url('http://hdwallpapersfit.com/wp-content/uploads/2015/04/dark-abstract-background.jpg');
 }
 
 .droneImg{
@@ -37,4 +46,10 @@ body{
 }
 .controllList{
   text-align: left;
+}
+.mainBackground{
+  width:100%
+  height:100%
+  background-color: red;
+  background-image: url('../images/ParrotDrone.jpg');
 }

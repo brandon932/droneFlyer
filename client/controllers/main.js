@@ -7,6 +7,18 @@ app.controller('mainCtrl', function($scope, $rootScope, $location, httpFactory, 
     });
   };
 
+  $scope.rentDrone = function(drone){
+    httpFactory.get('api/drone/'+drone._id)
+    .then(function(response){
+      $scope.userDrone = response.data;
+      console.log($scope.userDrone);
+    });
+
+
+    $location.path("/user");
+
+  };
+
   $scope.flyDrone = function(drone){
     console.log("test flight flyig drone" + drone.name);
     $location.path("/webFlight");

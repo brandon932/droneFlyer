@@ -2,12 +2,12 @@ app.controller('navbarCtrl', function($scope, $rootScope,$location, $window, $au
 
 
 
+  $rootScope.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   $scope.isAuthenticated = function() {
     return $auth.isAuthenticated();
   };
 
   $scope.isAdmin = function(){
-    $rootScope.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     return $rootScope.currentUser.admin;
 
   };
