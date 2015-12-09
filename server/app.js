@@ -8,7 +8,6 @@ var mongoose = require('mongoose');
 
 
 // *** config file *** //
-var config = require('../_config');
 
 
 // *** express instance *** //
@@ -30,7 +29,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 
 // *** mongoose ** //
-mongoose.connect(config.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI);
 
 
 // *** main routes *** //

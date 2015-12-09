@@ -5,7 +5,6 @@ var jwt = require('jwt-simple');
 var request = require('request');
 var qs = require('querystring');
 
-var config = require('../../_config');
 var User = require('../models/user.js');
 
 
@@ -20,7 +19,7 @@ function ensureAuthenticated(req, res, next) {
     // decode the token
     var header = req.headers.authorization.split(' ');
     var token = header[1];
-    var payload = jwt.decode(token, config.TOKEN_SECRET);
+    var payload = jwt.decode(token, process.env.TOKEN_SECRET);
     var now = moment().unix();
 
     // check if the token has expired
@@ -49,7 +48,7 @@ function createToken(user) {
         iat: moment().unix(),
         sub: user._id
     };
-    return jwt.encode(payload, config.TOKEN_SECRET);
+    return jwt.encode(payload, process.env.TOKEN_SECRET);
 }
 
 // *** register route *** //
@@ -133,7 +132,7 @@ router.post('/github', function(req, res) {
     code: req.body.code,
     client_id: req.body.clientId,
     redirect_uri: req.body.redirectUri,
-    client_secret: config.GITHUB_SECRET
+    client_secret: process.env.GITHUB_SECRET
   };
 
   // Step 1. Exchange authorization code for access token.
@@ -150,7 +149,7 @@ router.post('/github', function(req, res) {
             return res.status(409).send({ message: 'There is already a GitHub account that belongs to you' });
           }
           var token = req.headers.authorization.split(' ')[1];
-          var payload = jwt.decode(token, config.TOKEN_SECRET);
+          var payload = jwt.decode(token, process.env.TOKEN_SECRET);
           User.findById(payload.sub, function(err, user) {
             if (!user) {
               return res.status(400).send({ message: 'User not found' });
