@@ -12,13 +12,13 @@ app.controller('mainCtrl', function($scope, $rootScope, $location, httpFactory, 
     $location.path("/webFlight");
     httpFactory.put('api/drone/'+ drone._id , {rented:true});
     $window.localStorage.currentDrone = JSON.stringify(drone);
-    
+
   };
 
-  $scope.done = function(drone){
-    console.log(JSON.parse(localStorage.getItem('currentDrone')));
+  $scope.done = function(){
+    var drone =JSON.parse(localStorage.getItem('currentDrone'));
     $location.path("/home");
-    // httpFactory.put('api/drone/'+ drone._id , {rented:false});
+    httpFactory.put('api/drone/'+ drone._id , {rented:false});
     delete $window.localStorage.currentDrone;
   };
 

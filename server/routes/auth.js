@@ -53,6 +53,8 @@ function createToken(user) {
 }
 
 // *** register route *** //
+
+
 router.post('/signup', function(req, res) {
     User.findOne({email: req.body.email}, function(err, existingUser) {
         if (existingUser) {
@@ -99,6 +101,27 @@ router.post('/login', function(req, res) {
             });
         });
     });
+});
+// *** list and update users ***//
+router.get('/find', function(req,res){
+  User.find(function(err, users){
+    if (err) {
+      res.send(err);
+    }else{
+      res.json(users);
+    }
+  });
+});
+
+router.put('/find/:id', function(req,res){
+  options = {"new":true};
+  User.findByIdAndUpdate(req.params.id, req.body, options,function(err, users){
+    if (err) {
+      res.send(err);
+    }else{
+      res.json(users);
+    }
+  });
 });
 
 
