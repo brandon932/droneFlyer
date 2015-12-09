@@ -4,7 +4,7 @@ app.config(function($routeProvider, $authProvider, $locationProvider) {
 
     $authProvider.github({
       url:'/auth/github',
-      clientId: 'db0cf5e1495effc961f7',
+      clientId: '0c345464624272812a83',
       redirectUri: window.location.origin
     });
 
