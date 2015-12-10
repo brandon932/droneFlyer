@@ -17,8 +17,12 @@ body{
   max-width: 300px;
 }
 .droneBox{
-  border: 5px:black;
-  padding: 10px;
+  width: 100%
+  background-color: #fff;
+}
+.space{
+  padding: 5px;
+  margin: 5px;
 }
 .wrapper{
   width:80%;

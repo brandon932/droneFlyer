@@ -1,6 +1,6 @@
-<div class="container" ng-repeat="drone in drones">
-  <div ng-if="!drone.rented" >
-    <div class="droneBox pull-left">
+<div class="space" ng-repeat="drone in drones">
+  <div ng-if="!drone.rented" class="container panel" >
+    <div class="droneBox pull-left panel">
       <img class='droneImg' src="{{drone.image}}" alt="not found">
     </div>
     <div class="droneBox">
@@ -8,7 +8,7 @@
       <hr>
       <div class="pull-left">
         <p>
-          {{drone.name}} {{drone.description}}
+          {{drone.description}}
         </p>
       </div>
       <div class="">
