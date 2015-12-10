@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 var Drone = new Schema({
   name:String,
+  description:String,
   price:Number,
   image:String,
   ip:String,

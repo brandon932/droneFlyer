@@ -14,6 +14,7 @@ body{
 
 .droneImg{
   max-height: 200px;
+  max-width: 300px;
 }
 .droneBox{
   border: 5px:black;
@@ -52,4 +53,8 @@ body{
   height:100%
   background-color: red;
   background-image: url('../images/ParrotDrone.jpg');
+}
+.droneForm{
+  background-color:rgba(21, 73, 36, 0.68)
+
 }

@@ -1,1 +1,35 @@
-<h1>This is the admin page</h1>
+<h1>New drone form</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8 droneForm">
+      <div class="message-section text-center" ng-show="success">
+          <p class="alert alert-info" role="alert" id="message">{{message}}</p>
+      </div>
+      <form class="">
+        <div class="form-group">
+          <label>Drone Name</label>
+          <input  ng-model="drone.name" type="text" class="form-control"  placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label>Drone Description</label>
+          <input ng-model="drone.description" type="text" class="form-control"  placeholder="Description">
+        </div>
+        <div class="form-group">
+          <label>Image Location</label>
+          <input ng-model="drone.image" type="text" class="form-control"  placeholder="URL">
+        </div>
+        <div class="form-group">
+          <label>IP Adress</label>
+          <input ng-model="drone.ip" type="text" class="form-control"  placeholder="IP Adress">
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          <input ng-model="drone.price" type="text" class="form-control"  placeholder="Price">
+        </div>
+        <button ng-click="postDrone()" type="submit" class="btn btn-default">Add Drone</button>
+      </form>
+    </div>
+  </div>
+</div>

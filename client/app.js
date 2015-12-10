@@ -40,7 +40,7 @@ app.config(function($routeProvider, $authProvider, $locationProvider) {
     })
     .when('/admin', {
       templateUrl: 'partials/admin.html',
-      controller: 'mainCtrl',
+      controller: 'adminCtrl',
       access: {restricted: true}
     })
     .otherwise('/');

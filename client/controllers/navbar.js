@@ -8,8 +8,11 @@ app.controller('navbarCtrl', function($scope, $rootScope,$location, $window, $au
   };
 
   $scope.isAdmin = function(){
-    return $rootScope.currentUser.admin;
-
+    if ($rootScope.currentUser.admin === true){
+      return true;
+    }else{
+      return false;
+    }
   };
 
   $scope.logout = function() {
