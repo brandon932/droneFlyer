@@ -35,7 +35,7 @@ app.config(function($routeProvider, $authProvider, $locationProvider) {
     })
     .when('/user', {
       templateUrl: 'partials/user.html',
-      controller: 'mainCtrl',
+      controller: 'userCtrl',
       access: {restricted: true}
     })
     .when('/admin', {
